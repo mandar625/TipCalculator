@@ -26,6 +26,7 @@ const billInput = document.getElementById('billTotalInput')
 const tipInput = document.getElementById('tipInput')
 const numberOfPeopleDiv = document.getElementById('numberOfPeople')
 const perPersonTotalDiv = document.getElementById('perPersonTotal')
+const tip = document.getElementById('Total')
 
 // Get number of people from number of people div
 let numberOfPeople = Number(numberOfPeopleDiv.innerText)
@@ -48,10 +49,13 @@ const calculateBill = () => {
 
   // calculate the per person total (total divided by number of people)
   const perPersonTotal = total / numberOfPeople
+
+
   // console.log(perPersonTotal)
 
   // update the perPersonTotal on DOM & show it to user
-  perPersonTotalDiv.innerText = `$${perPersonTotal.toFixed(2)}`
+  perPersonTotalDiv.innerText = `₹${perPersonTotal.toFixed(2)}`
+  tip.innerText = `₹${tipAmount.toFixed(2)}`
 }
 
 // ** Splits the bill between more people **
